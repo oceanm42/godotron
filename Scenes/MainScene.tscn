@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Audio/hit.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/MainScene.gd" type="Script" id=2]
+[ext_resource path="res://Audio/shoot.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Score.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/Robotron.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 2 )
+bound = {
+"down": 692,
+"left": 33,
+"right": 1246,
+"up": 35
+}
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -23.223
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -23.223
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 1.0
+margin_top = 3.0
+margin_right = 421.0
+margin_bottom = 141.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "Score: 100"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

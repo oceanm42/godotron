@@ -1,0 +1,67 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/GodoPlayer/tile006.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/GodoPlayer/tile010.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/GodoPlayer/tile009.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/GodoPlayer/tile011.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/GodoPlayer/tile001.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GodoPlayer/tile002.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GodoPlayer/tile003.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GodoPlayer/tile008.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/GodoPlayer/tile004.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GodoPlayer/tile005.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GodoPlayer/tile000.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GodoPlayer/tile007.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.623665, 20.0222 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
+position = Vector2( 33, 35 )
+collision_mask = 3
+script = ExtResource( 2 )
+wait_shoot_time = 0.05
+offset = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( -12.8274, -0.549389 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
