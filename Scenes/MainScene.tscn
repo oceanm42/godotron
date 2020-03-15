@@ -35,7 +35,7 @@ margin_right = 421.0
 margin_bottom = 141.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
-text = "Score: 100"
+text = "Score: 10"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
